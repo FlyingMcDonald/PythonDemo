@@ -13,4 +13,3 @@ class CertificateVerify:
 
 requestObj = CertificateVerify()
 requestObj.noVerify()
-
