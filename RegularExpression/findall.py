@@ -31,7 +31,7 @@ class Findall:
         print(type(results))
         for result in results:
             # print(result)
-            print(result[1])
+            print(result[0], result[1], result[2])
     
 reg = Findall()
 reg.findAll_2()

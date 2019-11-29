@@ -5,13 +5,22 @@ headers = {
 }
 urlObj = requests.get(url, headers = headers)
 content = urlObj.text
-pattern = re.compile('<li.*?cover.*?href="(.*?)".*?title="(.*?)".*?more-meta.*?author">(.*?)</span>.*?year">(.*?)</span>.*?</li>', re.S)
+# print(content)
+# with open('/tmp/douban.txt', 'w') as e:
+#     e.write(content)
+#     e.close()
+content = re.sub('\\s','', content)
+pattern = re.compile('<li.*?cover.*?href="(.*?)".*?title="(.*?)".*?more-meta.*?author">(.*?)</span>.*?year">(.*?)</span>.*?publisher">(.*?)</span>.*?</li>', re.S)
 results = re.findall(pattern, content)
+# print(len(results))
 print(results)
-for result in results:
-    result = re.sub('\\s', '', result)
-    url, author, year, publisher = result
-    print(url, author, year, publisher)
+# for result in results:
+#     # result_2 = re.sub('\\s', '', result)
+#     author, year, publisher = result
+#     year = re.sub('\\s', '', year)
+#     publisher = re.sub('\\s', '', publisher)
+#     print(author, year, publisher)
+    # print(result)
 # print(results)
 # for result in results:
 #     result_2 = re.findall('<li.*?>.*?author.*?>(.*?)</div>.*?</li>', result, re.S)
@@ -20,3 +29,5 @@ for result in results:
 #         result_3 = re.sub('\\s', '', result_3)
 #         result_3 = re.sub('&nbsp;', '', result_3)
 #         print(result_3)
+# .*?more-meta.*?author">(.*?)</span>.*?year">(.*?)</span>
+#  title="(.*?)">
