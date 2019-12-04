@@ -10,6 +10,15 @@ html = """
 and they lived at the bottom of a well.</p>
 <p class="story">...</p>
 """
+class ParentNode:
+    def parentNode_1(self):#父节点
+        soup = BeautifulSoup(html, 'lxml')
+        print(soup.a.parent)
 
-soup = BeautifulSoup(html, 'lxml')
-print(soup.a.parent)
+    def parentNode_2(self):#祖先节点
+        soup = BeautifulSoup(html, 'lxml')
+        # print(list(enumerate(soup.a.parents)))
+        for i, value in enumerate(soup.a.parents):
+            print(i, value)
+nodeObj = ParentNode()
+nodeObj.parentNode_2()

@@ -10,6 +10,12 @@ html = """
 and they lived at the bottom of a well.</p>
 <p class="story">...</p>
 """
-soup = BeautifulSoup(html, 'lxml')
-print(list(enumerate(soup.a.next_siblings)))
-print(list(enumerate(soup.a.previous_siblings)))
+
+class BrotherNode:
+    def bortherNode_1(self):     
+        soup = BeautifulSoup(html, 'lxml')
+        print(list(enumerate(soup.a.next_siblings)))
+        print(list(enumerate(soup.a.previous_siblings)))
+
+nodeObj = BrotherNode()
+nodeObj.bortherNode_1()
